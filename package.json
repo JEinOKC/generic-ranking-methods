@@ -6,7 +6,7 @@
     "email": "me@jamesrengland.com",
     "url":  "http://www.jamesrengland.com/"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "dependencies": {
     "sylvester": "0.0.21"
   }
