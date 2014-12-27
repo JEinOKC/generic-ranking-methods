@@ -1,0 +1,13 @@
+{
+  "name": "generic-ranking-methods",
+  "description": "Basic Methods To Turn Games/Results into a set of rankings",
+  "author": {
+    "name": "James England",
+    "email": "me@jamesrengland.com",
+    "url":  "http://www.jamesrengland.com/"
+  },
+  "version": "1.0.1",
+  "dependencies": {
+    "sylvester": "0.0.21"
+  }
+}
