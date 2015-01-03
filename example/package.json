@@ -1,0 +1,10 @@
+{
+  "description": "example on how to use the generic-ranking-methods package",
+  "author": {
+    "name": "James England",
+    "email": "me@jamesrengland.com",
+    "url":  "http://www.jamesrengland.com/"
+  },
+  "dependencies": {
+  }
+}

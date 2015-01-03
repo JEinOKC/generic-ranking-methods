@@ -1,0 +1,43 @@
+[
+	{
+		"calcs": {
+			"home_team_code": 1,
+			"opponent_code": 2,
+			"ptDiff" : 14, 
+			"homeRep" : 1,
+			"awayRep" : -1
+		}
+		
+	},
+	{
+		"calcs": {
+			"home_team_code": 1,
+			"opponent_code": 3,
+			"ptDiff" : 5, 
+			"homeRep" : 1,
+			"awayRep" : -1	
+		}
+		
+	},
+	{
+		"calcs": {
+			"home_team_code": 2,
+			"opponent_code": 4,
+			"ptDiff" : 9, 
+			"homeRep" : -1,
+			"awayRep" : 1
+		}
+			
+	},
+	{
+		"calcs": {
+			"home_team_code": 3,
+			"opponent_code": 4,
+			"ptDiff" : 2, 
+			"homeRep" : 1,
+			"awayRep" : -1
+		}
+			
+	}
+
+]

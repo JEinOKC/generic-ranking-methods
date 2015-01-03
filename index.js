@@ -50,12 +50,12 @@ RankingMethods.prototype.matrixMagic = function(myMatrices){
 	
 	var xTx_Inverse = xTx.inv();
 	if(xTx_Inverse !== null){
-		console.log('inverse was created. Things going well..');
+		// console.log('inverse was created. Things going well..');
 		return xTx_Inverse.x(xTy);	
 	}
 	
 
-	console.log("matrix is singular. Cannot create a ranking");
+	// console.log("matrix is singular. Cannot create a ranking");
 
 	throw "matrix is singular. Cannot create a ranking";
 	// return null;
@@ -148,6 +148,10 @@ RankingMethods.prototype.create2Darray = function(x,y) {
     
     return arr;
 }
+
+RankingMethods.prototype.RatingSort = function(a,b){
+	return b.rating-a.rating;
+};
 
 
 var rankingMethods = module.exports = exports = new RankingMethods;

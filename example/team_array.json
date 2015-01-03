@@ -1,0 +1,19 @@
+[
+	{
+		"team_id": 1,
+		"team_name": "New York"
+	},
+	{
+		"team_id": 2,
+		"team_name": "Los Angeles"
+	},
+	{
+		"team_id": 3,
+		"team_name": "Chicago"
+	},
+	{
+		"team_id": 4,
+		"team_name": "Minneapolis"
+	}
+
+]

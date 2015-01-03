@@ -3,21 +3,38 @@
 
 node.js implementation to generate sports rankings
 
-This project is maintained by {James R England}[http://www.jamesrengland.com]
 
-= Documentation
+# Documentation
 
-To Be Continued...
+##Getting Started
 
-= Installation
+	- Provide two arrays: an array of teams [example/team_array.json] & an array of games [example/schedule.json]
+	- call Run(team_array, schedule_array) method
+	- if schedule is well-connected, this method will return an array of scores in the same order as the team array you passed in
+
+# Installation
 
     npm install generic-ranking-methods
 
-= Usage
+# Usage
 
-To Be Continued...
+This project was created for my college football ratings system, which can be found at http://www.jamesrengland.com/Rank. This section is simply all of the complicated matrix math that is required to turn your game results into an array of weighted ratings. These 'games' could be sporting events or any comparison between two objects
 
-= License
+# Changelog
+
+## 1.0.3
+	- added example folder with basic 4-team schedule/results
+	- created sorting method within index.js that allows team array to be sorted by generated ratings
+
+## 1.0.1 - 1.0.2
+	- fixed small bugs to allow project to run without original code
+	- changes to readme, getting GIT and NPM docs coordinated
+	- Basically learning how to contribute to GitHub and npm
+## 1.0.0
+	- pulled code from personal project
+
+
+# License
 
 This project is released under The MIT License
 
