@@ -22,6 +22,10 @@ This project was created for my college football ratings system, which can be fo
 
 # Changelog
 
+## 1.0.4
+- Added gulpfile for linting
+- Implemented strict mode
+
 ## 1.0.3
 - added example folder with basic 4-team schedule/results
 - created sorting method within index.js that allows team array to be sorted by generated ratings

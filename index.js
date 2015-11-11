@@ -1,10 +1,13 @@
+(function(){
+
+"use strict";
+
 var sylvester 	= require('sylvester'),
   Matrix = sylvester.Matrix,
   Vector = sylvester.Vector;
 
 // constructor
-function RankingMethods () {};
-
+function RankingMethods () {}
 
 RankingMethods.prototype.Run = function(teamArray, schedule){
 	//initialize the matrices based on the sizes of our queries
@@ -23,7 +26,6 @@ RankingMethods.prototype.Run = function(teamArray, schedule){
 
 	return results;
 };
-
 	
 
 RankingMethods.prototype.matrixMagic = function(myMatrices){
@@ -38,24 +40,28 @@ RankingMethods.prototype.matrixMagic = function(myMatrices){
 	var xTx_array = xTx.elements;
 	var xTy_array = xTy.elements;
 
-	for(i=0;i<xTx_array[xTx_array.length-1].length;i++)
+	for(var i=0;i<xTx_array[xTx_array.length-1].length;i++){
 		xTx_array[xTx_array.length-1][i] = 1;
+	}
+		
 
 	xTx = Matrix.create(xTx_array);
 
-	for(i=0;i<xTy_array[xTy_array.length-1].length;i++)
+	for(i=0;i<xTy_array[xTy_array.length-1].length;i++){
 		xTy_array[xTy_array.length-1][i] = 0;
+	}
+		
 
 	xTy = Matrix.create(xTy_array);
 	
 	var xTx_Inverse = xTx.inv();
 	if(xTx_Inverse !== null){
-		// console.log('inverse was created. Things going well..');
+		console.log('inverse was created. Things going well..');
 		return xTx_Inverse.x(xTy);	
 	}
 	
 
-	// console.log("matrix is singular. Cannot create a ranking");
+	console.log("matrix is singular. Cannot create a ranking");
 
 	throw "matrix is singular. Cannot create a ranking";
 	// return null;
@@ -69,7 +75,7 @@ RankingMethods.prototype.matrixTemplates = function(gameCount, teamCount){
         double[][] diffMatrix = new double[GameArray.size()][1];
 	*/
 
-	myMatrices = {
+	var myMatrices = {
 		'gameMatrixArray' : rankingMethods.create2Darray(gameCount, teamCount),
 		'diffMatrixArray' : rankingMethods.create2Darray(gameCount, 1)
 	};
@@ -97,22 +103,24 @@ RankingMethods.prototype.populateMatrices = function(myMatrices,TeamArray,schedu
 		a minimal game object can be found using the minimalGameObject method
 	*/
 
-	for(i=0;i<scheduleArray.length;i++){
+	for(var i=0;i<scheduleArray.length;i++){
 		var Game = scheduleArray[i].calcs;
 
 
-		for(j=0;j<TeamArray.length;j++){
+		for(var j=0;j<TeamArray.length;j++){
 			var tmpTeam = TeamArray[j];
-			if(tmpTeam['team_id'] == Game.home_team_code){
+			if(tmpTeam.team_id == Game.home_team_code){
 				// console.log("MATCH!!");
 				myMatrices.gameMatrixArray[i][j] = Game.homeRep;
 			}
-			else if (tmpTeam['team_id'] == Game.opponent_code){
+			else if (tmpTeam.team_id == Game.opponent_code){
 				// console.log("MATCH!!");
 				myMatrices.gameMatrixArray[i][j] = Game.awayRep;
 			}	
-			else
+			else{
 				myMatrices.gameMatrixArray[i][j] = 0;
+			}
+				
 		}
 
 		myMatrices.diffMatrixArray[i][0] = Game.ptDiff;
@@ -133,25 +141,22 @@ RankingMethods.prototype.minimalGameObject = function(){
 		'homeRep' : -1,//-1 indicates a loss
 		'awayRep' : 1//1 indicates a win
 	};
-}
+};
 
 RankingMethods.prototype.create2Darray = function(x,y) {
     var arr = new Array(x);
 
-    for(i=0;i<x;i++){
+    for(var i=0;i<x;i++){
     	arr[i] = new Array(y);
-    	for(j=0;j<y;j++){
+    	for(var j=0;j<y;j++){
     		arr[i][j]=0;
     	}
     }
-
     
     return arr;
-}
-
-RankingMethods.prototype.RatingSort = function(a,b){
-	return b.rating-a.rating;
 };
 
+var rankingMethods = module.exports = exports = new RankingMethods();
 
-var rankingMethods = module.exports = exports = new RankingMethods;
+
+})();
